@@ -7,8 +7,8 @@
   --text-main: #1e293b;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --radius: 12px;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -158,11 +158,20 @@ button:active {
   gap: 0.5rem;
 }
 
-/* Validated/Preview State */
-.preview-container {
-  margin-top: 2rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 1.5rem;
+.actions {
+  margin-top: 1rem;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.secondary-btn:hover {
+  background-color: #f0fdf4;
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 iframe {
@@ -174,31 +183,42 @@ iframe {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media print {
   body {
-      background: white;
-      display: block;
+    background: white;
+    display: block;
   }
-  .card, .container {
-      box-shadow: none;
-      padding: 0;
-      width: 100%;
-      max-width: none;
+
+  .card,
+  .container {
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    max-width: none;
   }
-  #non-printable, 
-  .file-upload-wrapper, 
-  #password-container, 
+
+  #non-printable,
+  .file-upload-wrapper,
+  #password-container,
   .subtitle,
   h1 {
-      display: none !important;
+    display: none !important;
   }
+
   #iframe-pdf {
-      display: block;
-      height: 100vh;
-      border: none;
+    display: block;
+    height: 100vh;
+    border: none;
   }
 }

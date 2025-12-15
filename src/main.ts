@@ -66,10 +66,26 @@ import printJS from "print-js";
 
       // UI Updates
       passwordContainer.style.display = 'none';
-      printbtn.style.display = 'block';
-      passwordInput.value = ''; // clear password
 
-      // Update print button to print the UNLOCKED content
+      const actionsContainer = document.querySelector('.actions') as HTMLDivElement;
+      const downloadBtn = document.getElementById('download-btn') as HTMLButtonElement;
+
+      actionsContainer.style.display = 'flex';
+
+      // Update download button
+      downloadBtn.onclick = () => {
+        const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `unlocked_${currentFile ? currentFile.name : 'document.pdf'}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      };
+
+      // Update print button
       printbtn.onclick = () => {
         printJS({
           printable: pdfBase64,
