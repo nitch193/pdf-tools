@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<title>PDF Password Remover - Unlock & Print Secured PDFs</title>
+<meta name="description"
+    content="Free tool to remove passwords from PDF files. Upload your secured PDF, enter the password, and instantly unlock it for printing or saving without restrictions. Secure and runs locally in your browser.">
+<meta name="keywords"
+    content="pdf password remover, unlock pdf, decrypt pdf, pdf security, remove pdf password, free pdf tool, browser-based pdf unlocker">
+<meta name="author" content="PDF Tools">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Password Remover - Unlock & Print Secured PDFs">
+<meta property="og:description"
+    content="Free tool to remove passwords from PDF files. Secure, fast, and runs entirely in your browser.">
+<meta property="og:url" content="https://example.com/pdf-password-remover"> <!-- Replace with actual URL -->
+<meta property="og:site_name" content="PDF Tools">
+
+<!-- X (Twitter) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Password Remover - Unlock & Print Secured PDFs">
+<meta name="twitter:description"
+    content="Free tool to remove passwords from PDF files. Secure, fast, and runs entirely in your browser.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>PDF Password Remover</h1>
+            <p class="subtitle">Upload a secured PDF to unlock and print it.</p>
+
+            <div class="file-upload-wrapper">
+                <span class="upload-icon">📄</span>
+                <span class="upload-text">Click to upload PDF</span>
+                <input type="file" id="pdf-input" accept="application/pdf" />
+            </div>
+
+            <div id="password-container" style="display: none;">
+                <label for="password-input">Enter PDF Password</label>
+                <input type="password" id="password-input" placeholder="••••••••" />
+                <button id="submit-password">Unlock Document</button>
+                <p id="error-message" class="error-msg" style="display: none;">Incorrect Password</p>
+            </div>
+
+            <button id="print" style="display: none;">Print & Save Unlocked PDF</button>
+        </div>
+
+        <!-- Hidden logic elements -->
+        <iframe src="" id="iframe-pdf" style="display:none"></iframe>
+        <!-- Hidden by default, mostly for logic/print JS -->
+        <object id="pdf" data="" type="application/pdf" style="width:0;height:0;opacity:0;position:absolute;"></object>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
