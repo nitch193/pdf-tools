@@ -63,3 +63,15 @@ yarn build
 ## License
 
 MIT
+
+## GitHub Pages Deployment
+
+- **Workflow:** A GitHub Actions workflow at `.github/workflows/deploy.yml` builds and deploys the site to GitHub Pages on pushes to `main` (also supports manual `workflow_dispatch`).
+- **Build base:** `vite`'s `base` is configurable via the `PAGES_BASE` env var; the workflow sets it to `/pdf-tools/` during the build. To build locally for Pages, run:
+
+```bash
+PAGES_BASE=/pdf-tools/ npm run build
+```
+- **.nojekyll:** The workflow creates `dist/.nojekyll` so Pages serves static files correctly.
+
+If you need a custom domain or different repository name, update `PAGES_BASE` accordingly.
